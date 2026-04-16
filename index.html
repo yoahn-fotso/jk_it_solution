@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Accueil | JK IT Solution - Vidéosurveillance & Sécurité Informatique</title>
+    <title>Accueil | JK IT Solution - Vidéosurveillance & Sécurité</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="vidéosuveillance, cybersécurité, réseau, contrôle d'accès, informatique, Yaoundé, Cameroun" name="keywords">
-    <meta content="JK IT Solution vous accompagne dans la sécurité de votre entreprise à Yaoundé : vidéosurveillance, contrôle d'accès, sécurité réseau et solutions IoT intelligentes." name="description">
+    <meta content="JK IT Solution vous accompagne dans la sécurité de votre entreprise à Yaoundé." name="description">
 
     <link href="img/icon/icon-1.png" rel="icon">
 
@@ -26,8 +26,8 @@
 
     <style>
         :root {
-            --primary: #00cc66 !important; 
-            --dark: #111111 !important; 
+            --primary: #00cc66 !important; /* Vert Tech */
+            --dark: #111111 !important; /* Noir profond */
         }
 
         .text-primary { color: var(--primary) !important; }
@@ -35,12 +35,14 @@
         .btn-primary { background-color: var(--primary) !important; border-color: var(--primary) !important; color: #000 !important; font-weight: bold;}
         .btn-primary:hover { background-color: #00994c !important; border-color: #00994c !important; color: #fff !important;}
 
-        /* MENU PREMIUM */
-        .navbar { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+        /* =========================================
+           1. MENU PREMIUM (FOND BLANC, BOUTONS RONDS)
+           ========================================= */
+        .navbar { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); background-color: #ffffff !important; }
         .navbar-nav .nav-link {
             position: relative; padding: 8px 22px !important; margin: 15px 5px !important; 
             border-radius: 30px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-weight: 600; color: #aaaaaa; border: 1px solid transparent;
+            font-weight: 600; color: #555555; border: 1px solid transparent;
         }
         .navbar-nav .nav-link:hover {
             background-color: #1a1a1a; color: var(--primary) !important;
@@ -54,10 +56,12 @@
             background-color: #1a1a1a; color: var(--primary) !important; border: 1px solid var(--primary);
         }
 
-        /* BLOCS FACTS (Noir & Vert) */
+        /* =========================================
+           2. BLOCS NOIR & VERT (Cartes stylées)
+           ========================================= */
         .fact-card {
             background: #161616; border-radius: 15px; padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: all 0.4s ease;
             border: 1px solid #333333; text-align: left; position: relative; overflow: hidden; height: 100%;
         }
         .fact-card:hover {
@@ -75,103 +79,105 @@
             color: #222222; z-index: 0; transition: 0.4s;
         }
         .fact-card:hover .fact-number { color: rgba(0, 204, 102, 0.2); }
-        .fact-card h5, .fact-card span { position: relative; z-index: 1; }
-        .fact-card h5 { color: #ffffff; font-weight: 700; }
-        .fact-card span { color: #bbbbbb; font-size: 0.95rem; line-height: 1.6; display: block;}
+        .fact-card h5 { color: #ffffff; font-weight: 700; position: relative; z-index: 1;}
+        .fact-card span, .fact-card p { color: #bbbbbb; position: relative; z-index: 1;}
 
-        /* BLOCS SERVICES PREMIUM (Pour l'accueil) */
+        /* BOUTONS DANS LES CARTES SERVICES */
         .service-card-premium {
             background: #161616; border-radius: 15px; padding: 40px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid #333333; text-align: left; position: relative; overflow: hidden; height: 100%; color: #bbbbbb;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: all 0.4s ease; border: 1px solid #333333; height: 100%;
         }
-        .service-card-premium:hover {
-            transform: translateY(-12px); box-shadow: 0 15px 40px rgba(0, 204, 102, 0.15); border-color: var(--primary);
-        }
-        .service-card-premium h4 { color: #ffffff; font-weight: 700; margin-bottom: 15px; }
-        .service-card-premium .btn-contact {
+        .service-card-premium:hover { transform: translateY(-12px); border-color: var(--primary); }
+        .service-card-premium h4 { color: #ffffff; font-weight: 700; }
+        .btn-contact {
             background: transparent; border: 2px solid var(--primary); color: var(--primary); border-radius: 30px;
-            padding: 8px 20px; transition: 0.3s; font-weight: 600; margin-top: 15px; display: inline-block; text-decoration: none;
+            padding: 8px 20px; transition: 0.3s; font-weight: 600; display: inline-block; text-decoration: none; margin-top: 15px;
         }
-        .service-card-premium:hover .btn-contact { background: var(--primary); color: #000; box-shadow: 0 4px 15px rgba(0, 204, 102, 0.4); }
+        .service-card-premium:hover .btn-contact { background: var(--primary); color: #000; }
 
-        /* CARTES MEMBRES DE L'ÉQUIPE */
+        /* CARTES ÉQUIPE ET PROJETS (Mode Noir) */
         .team-premium-card {
-            background: #161616; border-radius: 15px; overflow: hidden; border: 1px solid #333;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: 0.4s;
+            background: #161616; border-radius: 15px; overflow: hidden; border: 1px solid #333; transition: 0.4s;
         }
-        .team-premium-card:hover {
-            border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 204, 102, 0.2);
-        }
+        .team-premium-card:hover { border-color: var(--primary); transform: translateY(-10px); }
         .team-premium-card .text-center { background: #111; border-top: 1px solid #333; }
-        .team-premium-card h5 { color: #fff; font-weight: 700; }
-        .team-premium-card span { color: var(--primary) !important; font-weight: bold; }
-
-        /* PROJETS (Design Noir) */
-        .portfolio-text.bg-white {
-            background-color: #111 !important;
-            border: 1px solid #333;
-            border-top: none;
-        }
+        .portfolio-text.bg-white { background-color: #111 !important; border: 1px solid #333; border-top: none; }
         .portfolio-text h5 { color: #fff; }
 
-        /* BOUTON WHATSAPP FORCÉ À DROITE */
+        /* =========================================
+           3. FOOTER ULTRA ATTRAYANT
+           ========================================= */
+        .footer-premium {
+            background: linear-gradient(to right, #0a0a0a, #1a1a1a) !important;
+            border-top: 3px solid var(--primary);
+        }
+        .footer-premium h5 {
+            color: #ffffff; font-weight: 700; letter-spacing: 1px; margin-bottom: 25px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;
+        }
+        /* Style des liens rapides avec flèche animée */
+        .footer-link-custom {
+            color: #aaaaaa; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s;
+        }
+        .footer-link-custom::before {
+            content: "\f105"; font-family: "Font Awesome 5 Free"; font-weight: 900; margin-right: 10px; color: var(--primary); transition: 0.3s;
+        }
+        .footer-link-custom:hover { color: var(--primary); transform: translateX(8px); }
+        
+        /* Icônes réseaux sociaux Footer */
+        .social-icon-circle {
+            width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.05); border-radius: 50%; color: #fff; margin-right: 10px;
+            transition: 0.4s; border: 1px solid rgba(255,255,255,0.1); text-decoration: none;
+        }
+        .social-icon-circle:hover { background: var(--primary); color: #000; border-color: var(--primary); transform: translateY(-5px); }
+
+        /* =========================================
+           4. BOUTON WHATSAPP FLOTTANT (Désormais sage à droite)
+           ========================================= */
         .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 110px; 
-            right: 45px !important; left: auto !important; 
-            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 35px;
-            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2); z-index: 1000; display: flex; align-items: center; justify-content: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none;
+            position: fixed !important; width: 60px !important; height: 60px !important; 
+            bottom: 90px !important; right: 30px !important; left: auto !important; 
+            background-color: #25d366 !important; color: #FFF !important; border-radius: 50px !important; 
+            text-align: center !important; font-size: 35px !important; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3) !important; 
+            z-index: 9999 !important; display: flex !important; align-items: center !important; justify-content: center !important;
+            transition: 0.3s !important; text-decoration: none !important;
         }
-        .whatsapp-float:hover {
-            color: #FFF; transform: scale(1.1); box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.5);
-        }
-        @media (max-width: 768px) {
-            .whatsapp-float { width: 50px; height: 50px; bottom: 80px; right: 20px !important; font-size: 28px; }
-        }
+        .whatsapp-float:hover { transform: scale(1.1) !important; box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.6) !important; color: #fff !important;}
+        @media (max-width: 768px) { .whatsapp-float { width: 50px !important; height: 50px !important; bottom: 80px !important; right: 20px !important; font-size: 28px !important; } }
     </style>
 </head>
 
-<body style="background-color: #f8f9fa;">
+<body>
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Chargement...</span>
         </div>
     </div>
-    
+
     <div class="container-fluid bg-dark px-5">
         <div class="row gx-4 d-none d-lg-flex">
             <div class="col-lg-6 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="fa fa-map-marker-alt text-dark"></small>
-                    </div>
-                    <small>237 jk, Yaoundé, CM</small>
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small class="text-white">237 jk, Yaoundé, CM</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="fa fa-envelope-open text-dark"></small>
-                    </div>
-                    <small>juslinkutche@gmail.com</small>
+                    <small class="fa fa-envelope-open text-primary me-2"></small>
+                    <small class="text-white">juslinkutche@gmail.com</small>
                 </div>
             </div>
             <div class="col-lg-6 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="fa fa-phone-alt text-dark"></small>
-                    </div>
-                    <small>+237 6 94 16 46 68</small>
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small class="text-white">+237 6 94 16 46 68</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="far fa-clock text-dark"></small>
-                    </div>
-                    <small>Lun - Ven : 9h - 21h</small>
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small class="text-white">Lun - Ven : 9h - 21h</small>
                 </div>
             </div>
         </div>
     </div>
-
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
             <h2 class="m-0 text-primary">JK IT Solution</h2>
@@ -182,36 +188,30 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-4 py-lg-0">
                 <a href="index.html" class="nav-item nav-link active">Accueil</a>
-                <a href="about.html" class="nav-item nav-link">A propos</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="project.html" class="nav-item nav-link">Projet</a>
+                <a href="about.html" class="nav-item nav-link">À propos</a>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="project.html" class="nav-item nav-link">Projets</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="feature.html" class="dropdown-item">Fonctionnalités</a>
-                        <a href="quote.html" class="dropdown-item">Devis Gratuits</a>
+                        <a href="quote.html" class="dropdown-item">Devis Gratuit</a>
                         <a href="team.html" class="dropdown-item">Notre Équipe</a>
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="https://web.facebook.com/profile.php?id=61574640522614" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
         </div>
     </nav>
-
     <div class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-1.jpg" alt="Installation de système de vidéosurveillance">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
                 <div class="carousel-inner">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Meilleure Solution De Vidéosurveillance & De Sécurité Pour Vous.</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Protégez vos locaux commerciaux et résidentiels avec nos systèmes de caméras haute définition, accessibles à distance 24h/24.</p>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Meilleure Solution De Vidéosurveillance & Sécurité Pour Vous. </h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Protégez vos locaux commerciaux et résidentiels avec nos systèmes de caméras haute définition et un accès à distance sécurisé 24h/24.</p>
                                 <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Voir plus</a>
                                 <a href="quote.html" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
                             </div>
@@ -220,13 +220,13 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-2.jpg" alt="Système de contrôle d'accès sécurisé">
+                <img class="img-fluid" src="img/carousel-2.jpg" alt="">
                 <div class="carousel-inner">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Solutions De Sécurité Intelligente Pour Entreprises</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Contrôlez les accès et sécurisez vos données avec des infrastructures robustes, fiables et adaptées à votre croissance.</p>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Infrastructures Réseaux & Contrôle d'Accès Sécurisé.</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Maîtrisez vos flux et sécurisez vos données grâce à nos solutions technologiques robustes et intelligentes adaptées à votre entreprise.</p>
                                 <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Découvrir PLUS</a>
                                 <a href="quote.html" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
                             </div>
@@ -235,13 +235,13 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/carousel-3.jpg" alt="Interface domotique et réseaux informatiques">
+                <img class="img-fluid" src="img/carousel-3.jpg" alt="">
                 <div class="carousel-inner">
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Solution Innovante Pour La Sécurité Système</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Découvrez nos solutions connectées (IoT) et d'audit réseau pour optimiser la gestion de votre infrastructure technologique.</p>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">Découvrez nos solutions d'audit réseau et d'objets connectés (IoT) pour optimiser la gestion de votre infrastructure technologique.</p>
                                 <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Lire Plus</a>
                                 <a href="quote.html" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
                             </div>
@@ -251,123 +251,119 @@
             </div>
         </div>
     </div>
-
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5 mt-n5">
         <div class="container">
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="fact-card">
                         <div class="fact-number">01</div>
                         <div class="fact-icon-box">
-                            <img src="img/icon/icon-3.png" alt="Sécurité Maison" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-3.png" alt="Caméra" width="35"></div>
                         </div>
-                        <h5>MAISON SÉCURISÉE</h5>
+                        <h5>SÉCURITÉ À DOMICILE</h5>
                         <hr class="w-25 text-primary my-3">
-                        <span>Des équipements de pointe pour garantir la sécurité totale de votre domicile contre toute intrusion.</span>
+                        <p class="mb-0">Protégez votre cocon familial. Nos systèmes de caméras HD et alarmes intelligentes vous offrent une sérénité absolue, de jour comme de nuit, où que vous soyez.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                     <div class="fact-card">
                         <div class="fact-number">02</div>
                         <div class="fact-icon-box">
-                            <img src="img/icon/icon-4.png" alt="Accès Contrôlé" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-4.png" alt="Accès" width="35"></div>
                         </div>
                         <h5>CONTRÔLE D'ACCÈS</h5>
                         <hr class="w-25 text-primary my-3">
-                        <span>Gérez les flux de personnes dans votre entreprise grâce à nos systèmes de pointage et serrures intelligentes.</span>
+                        <p class="mb-0">Filtrez et maîtrisez vos entrées. Nous déployons des solutions biométriques et à badges de pointe pour protéger efficacement vos espaces professionnels sensibles.</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="fact-card">
                         <div class="fact-number">03</div>
                         <div class="fact-icon-box">
-                            <img src="img/icon/icon-2.png" alt="Support" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-2.png" alt="Support" width="35"></div>
                         </div>
                         <h5>SUPPORT 24/7</h5>
                         <hr class="w-25 text-primary my-3">
-                        <span>Une équipe technique disponible en continu pour assurer le bon fonctionnement de vos installations.</span>
+                        <p class="mb-0">Une sécurité sans faille exige une présence continue. Notre équipe technique est réactive et disponible 7j/7 pour l'assistance et la maintenance de vos installations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="Équipe technique JK IT Solution en intervention">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
-                        <h1 class="display-5 mb-4">L'Excellence Sécuritaire à Yaoundé.</h1>
-                        <p class="mb-4 pb-2 fs-5" style="line-height: 1.8; color: #333;">
-                            <strong>JK IT Solution</strong> est né d'une ambition claire : offrir aux entreprises et particuliers des solutions de sécurité électronique et d'infrastructure réseau dignes des plus hauts standards internationaux.
+                        <h1 class="display-5 mb-4">Votre Partenaire Stratégique à Yaoundé.</h1>
+                        <p class="mb-4 pb-2 fs-5" style="color: #444; line-height: 1.8;">
+                            Face aux défis numériques et physiques, l'approximation n'a pas sa place. <strong>JK IT Solution</strong> déploie des forteresses technologiques adaptées aux réalités du Cameroun.
                         </p>
-                        <p class="mb-5 pb-2" style="line-height: 1.8; color: #666;">
-                            Face aux menaces modernes, nous ne nous contentons pas d'installer du matériel. Nous concevons des écosystèmes technologiques robustes, fiables et sur mesure. Curieux de savoir comment nous transformons vos vulnérabilités en véritables forteresses numériques ?
+                        <p class="mb-4 pb-2" style="color: #666;">
+                            De l'audit de vulnérabilité à l'installation de réseaux complexes, nous combinons matériel premium et expertise technique pour protéger ce qui compte pour vous. Curieux de découvrir notre méthode ?
                         </p>
-                        <a href="about.html" class="btn btn-primary rounded-pill py-3 px-5">Découvrir notre expertise</a>
+                        <a href="about.html" class="btn btn-primary rounded-pill py-3 px-5 mt-2">Découvrir notre histoire</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center">
                 <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
-                <h1 class="display-5 mb-5">Nos Domaines d'Intervention</h1>
+                <h1 class="display-5 mb-5">Nos Services Spécialisés</h1>
             </div>
-            <div class="row g-4 justify-content-center">
+            <div class="row g-4">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <div class="service-card-premium">
                         <div class="fact-icon-box">
-                            <img class="img-fluid" src="img/icon/icon-6.png" alt="CCTV" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-6.png" alt="CCTV" width="35"></div>
                         </div>
-                        <h4 class="mb-3 fs-5">Vidéosurveillance Commerciale</h4>
-                        <p class="mb-4 small">Découvrez comment nos caméras haute résolution garantissent un suivi continu de vos locaux.</p>
-                        <a class="btn-contact" href="service.html">Voir le service</a>
+                        <h4 class="fs-5">Vidéosurveillance</h4>
+                        <p class="small mt-3">Solutions HD/4K avec enregistrement continu et monitoring sécurisé sur mobile.</p>
+                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <div class="service-card-premium">
                         <div class="fact-icon-box">
-                            <img class="img-fluid" src="img/icon/icon-8.png" alt="Biométrie" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-8.png" alt="Bio" width="35"></div>
                         </div>
-                        <h4 class="mb-3 fs-5">Accès Par Empreinte</h4>
-                        <p class="mb-4 small">Explorez nos solutions de verrouillage intelligent et de pointage pour vos employés.</p>
-                        <a class="btn-contact" href="service.html">Voir le service</a>
+                        <h4 class="fs-5">Accès & Biométrie</h4>
+                        <p class="small mt-3">Gérez vos accès locaux par empreinte digitale, reconnaissance faciale ou RFID.</p>
+                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <div class="service-card-premium">
                         <div class="fact-icon-box">
-                            <img class="img-fluid" src="img/icon/icon-9.png" alt="IoT" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-9.png" alt="IoT" width="35"></div>
                         </div>
-                        <h4 class="mb-3 fs-5">Consultation En IoT</h4>
-                        <p class="mb-4 small">Automatisez votre environnement de travail avec nos objets connectés sur mesure.</p>
-                        <a class="btn-contact" href="service.html">Voir le service</a>
+                        <h4 class="fs-5">Domotique & IoT</h4>
+                        <p class="small mt-3">Automatisation de vos environnements pour toujours plus de confort et de sécurité.</p>
+                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <div class="service-card-premium">
                         <div class="fact-icon-box">
-                            <img class="img-fluid" src="img/icon/icon-3.png" alt="Réseau" width="40">
+                            <div class="fact-icon"><img src="img/icon/icon-3.png" alt="Sec" width="35"></div>
                         </div>
-                        <h4 class="mb-3 fs-5">Systèmes De Sécurité Intelligents</h4>
-                        <p class="mb-4 small">Tests d'intrusion et pares-feux : apprenez à blinder votre réseau informatique.</p>
-                        <a class="btn-contact" href="service.html">Voir le service</a>
+                        <h4 class="fs-5">Sécurité Réseau IT</h4>
+                        <p class="small mt-3">Pares-feux, tests d'intrusion et sécurisation globale de vos données d'entreprise.</p>
+                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-fluid bg-dark overflow-hidden my-5 px-lg-0">
         <div class="container feature px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -380,7 +376,7 @@
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="btn-square bg-primary rounded-circle" style="width: 64px; height: 64px;">
-                                        <img class="img-fluid" src="img/icon/icon-7.png" alt="Bouclier" style="filter: brightness(0);">
+                                        <img class="img-fluid" src="img/icon/icon-7.png" alt="Icon" style="filter: brightness(0);">
                                     </div>
                                     <div class="ms-4">
                                         <p class="text-primary mb-2 fw-bold">Technologie</p>
@@ -391,7 +387,7 @@
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="btn-square bg-primary rounded-circle" style="width: 64px; height: 64px;">
-                                        <img class="img-fluid" src="img/icon/icon-10.png" alt="Qualité" style="filter: brightness(0);">
+                                        <img class="img-fluid" src="img/icon/icon-10.png" alt="Icon" style="filter: brightness(0);">
                                     </div>
                                     <div class="ms-4">
                                         <p class="text-primary mb-2 fw-bold">Service</p>
@@ -402,7 +398,7 @@
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="btn-square bg-primary rounded-circle" style="width: 64px; height: 64px;">
-                                        <img class="img-fluid" src="img/icon/icon-3.png" alt="IA" style="filter: brightness(0);">
+                                        <img class="img-fluid" src="img/icon/icon-3.png" alt="Icon" style="filter: brightness(0);">
                                     </div>
                                     <div class="ms-4">
                                         <p class="text-primary mb-2 fw-bold">Systèmes</p>
@@ -413,7 +409,7 @@
                             <div class="col-6">
                                 <div class="d-flex align-items-center">
                                     <div class="btn-square bg-primary rounded-circle" style="width: 64px; height: 64px;">
-                                        <img class="img-fluid" src="img/icon/icon-2.png" alt="Support" style="filter: brightness(0);">
+                                        <img class="img-fluid" src="img/icon/icon-2.png" alt="Icon" style="filter: brightness(0);">
                                     </div>
                                     <div class="ms-4">
                                         <p class="text-primary mb-2 fw-bold">Intervention</p>
@@ -426,118 +422,103 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="Technicien JK IT Solution configurant un serveur">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg"
+                            style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
-                <h1 class="display-5 mb-5">Nos Réalisations</h1>
-            </div>
-            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="col-12 text-center">
-                    <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">Tous</li>
-                        <li class="mx-2" data-filter=".first">Projets Terminés</li>
-                        <li class="mx-2" data-filter=".second">Projets En Cours</li>
-                    </ul>
-                </div>
+                <h1 class="display-5 mb-5">Nos Projets Récents</h1>
             </div>
             <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-inner border border-secondary rounded">
-                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
-                        <div class="text-center p-4 bg-dark text-white">
-                            <p class="text-primary mb-2">Sécurité Des Entreprises</p>
-                            <h5 class="lh-base mb-0 text-white fs-6">Système De Sécurité CCTV Adapté À Votre Entreprise</h5>
+                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-card-premium p-0 d-flex flex-column h-100">
+                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <div class="p-4 text-center flex-grow-1">
+                            <p class="text-primary mb-1 fw-bold">Sécurité Entreprise</p>
+                            <h5 class="text-white fs-6">Centre de Télésurveillance & Moniteurs</h5>
                         </div>
-                        <div class="portfolio-text text-center bg-dark p-4">
-                            <p class="text-primary mb-2">Sécurité Des Entreprises</p>
-                            <h5 class="lh-base mb-3 text-white fs-6">Système De Sécurité CCTV Adapté À Votre Entreprise</h5>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye text-dark"></i></a>
-                                </div>
+                        <div class="p-3 text-center border-top" style="border-color: #333 !important;">
+                            <a class="btn btn-square btn-primary rounded-circle" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="portfolio-inner border border-secondary rounded">
-                        <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                        <div class="text-center p-4 bg-dark text-white">
-                            <p class="text-primary mb-2">Vidéo Surveillance</p>
-                            <h5 class="lh-base mb-0 text-white fs-6">Installation Complexe De Caméras Thermiques</h5>
+                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-card-premium p-0 d-flex flex-column h-100">
+                        <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <div class="p-4 text-center flex-grow-1">
+                            <p class="text-primary mb-1 fw-bold">Vidéo Surveillance</p>
+                            <h5 class="text-white fs-6">Installation de Caméras Extérieures HD</h5>
                         </div>
-                        <div class="portfolio-text text-center bg-dark p-4">
-                            <p class="text-primary mb-2">Vidéo Surveillance</p>
-                            <h5 class="lh-base mb-3 text-white fs-6">Installation Complexe De Caméras Thermiques</h5>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye text-dark"></i></a>
-                            </div>
+                        <div class="p-3 text-center border-top" style="border-color: #333 !important;">
+                            <a class="btn btn-square btn-primary rounded-circle" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="portfolio-inner border border-secondary rounded">
-                        <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                        <div class="text-center p-4 bg-dark text-white">
-                            <p class="text-primary mb-2">Contrôle D'accès</p>
-                            <h5 class="lh-base mb-0 text-white fs-6">Déploiement de Pointage Biométrique Sécurisé</h5>
+                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-card-premium p-0 d-flex flex-column h-100">
+                        <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                        <div class="p-4 text-center flex-grow-1">
+                            <p class="text-primary mb-1 fw-bold">Contrôle D'accès</p>
+                            <h5 class="text-white fs-6">Déploiement de Pointage Biométrique</h5>
                         </div>
-                        <div class="portfolio-text text-center bg-dark p-4">
-                            <p class="text-primary mb-2">Contrôle D'accès</p>
-                            <h5 class="lh-base mb-3 text-white fs-6">Déploiement de Pointage Biométrique Sécurisé</h5>
-                            <div class="d-flex justify-content-center">
-                                <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye text-dark"></i></a>
-                            </div>
+                        <div class="p-3 text-center border-top" style="border-color: #333 !important;">
+                            <a class="btn btn-square btn-primary rounded-circle" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="Équipe technique discutant d'un projet de sécurité avec un client">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg"
+                            style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
-                        <h1 class="display-5 mb-5">Devis Gratuit</h1>
-                        <p class="mb-4 pb-2">Décrivez-nous votre projet d'installation de caméras, d'audit de sécurité ou d'infrastructure réseau. Notre équipe analysera vos besoins pour vous fournir une proposition technique et financière sur mesure.</p>
-                        <form>
+                        <h1 class="display-5 mb-5">Votre Devis Personnalisé</h1>
+                        <p class="mb-4 pb-2 text-secondary">La sécurité n'attend pas. Remplissez ces informations et recevez instantanément une estimation adaptée à votre besoin via WhatsApp. Simple, rapide et sans engagement.</p>
+                        
+                        <form id="devis-form" onsubmit="envoyerDevisWhatsApp(event)">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Votre Nom" style="height: 55px;">
+                                    <input type="text" class="form-control py-3" id="d-nom" placeholder="Nom & Prénoms" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Votre Email" style="height: 55px;">
+                                    <input type="text" class="form-control py-3" id="d-quartier" placeholder="Quartier (Yaoundé)" required>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Votre Mobile" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Sélectionner Un Service</option>
-                                        <option value="1">Vidéosurveillance</option>
-                                        <option value="2">Réseau & IT</option>
-                                        <option value="3">Autre Sécurité</option>
+                                <div class="col-12">
+                                    <select class="form-select py-3" id="d-type" required>
+                                        <option value="" selected disabled>Style de caméras souhaité</option>
+                                        <option value="Caméras IP (Haute résolution)">Caméras IP (Haute résolution réseau)</option>
+                                        <option value="Caméras Analogiques HD">Caméras Analogiques HD (Classique)</option>
+                                        <option value="Caméras Dôme (Discrètes)">Caméras Dôme (Intérieur / Discret)</option>
+                                        <option value="Caméras PTZ (Motorisées 360°)">Caméras PTZ (Motorisées 360°)</option>
+                                        <option value="Caméras Sans Fil (Wi-Fi)">Caméras Sans Fil (Wi-Fi)</option>
+                                        <option value="Caméras Thermiques">Caméras Thermiques / Nocturnes</option>
                                     </select>
                                 </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Détails du projet..."></textarea>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control py-3" id="d-pieces" placeholder="Nbre de pièces intérieures" min="0" required>
                                 </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Obtenir Le Devis</button>
+                                <div class="col-12 col-sm-6">
+                                    <input type="number" class="form-control py-3" id="d-supp" placeholder="Caméras supp. (Portail...)" min="0" required>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button class="btn btn-primary w-100 py-3 rounded-pill fs-5" type="submit">
+                                        <i class="fab fa-whatsapp me-2 fs-4"></i> Recevoir mon devis sur WhatsApp
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -546,7 +527,6 @@
             </div>
         </div>
     </div>
-
     <div class="container-xxl py-5 mb-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -560,8 +540,8 @@
                             <img class="img-fluid w-100" src="img/image1.jpg" alt="Juslin Kutche" style="height: 350px; object-fit: cover;">
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-1">Juslin Kutche</h5>
-                            <span class="text-primary d-block">Fondateur & Ingénieur</span>
+                            <h5 class="mb-1 text-white">Juslin Kutche</h5>
+                            <span class="text-primary d-block fw-bold">Fondateur & Ingénieur</span>
                         </div>
                     </div>
                 </div>
@@ -571,67 +551,60 @@
                             <img class="img-fluid w-100" src="img/image2.jpg" alt="Assistant Technique" style="height: 350px; object-fit: cover;">
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-1">Assistant</h5>
-                            <span class="text-primary d-block">Assistant Technique</span>
+                            <h5 class="mb-1 text-white">Assistant</h5>
+                            <span class="text-primary d-block fw-bold">Assistant Technique</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-secondary footer py-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid footer-premium py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Adresse</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>237 jk, Yaoundé, CM</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 694 16 46 68</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>juslinkutche@gmail.com</p>
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4">Contact & Adresse</h5>
+                    <p class="mb-2 text-light" style="opacity: 0.8;"><i class="fa fa-map-marker-alt me-3 text-primary"></i>237 jk, Yaoundé, CM</p>
+                    <p class="mb-2 text-light" style="opacity: 0.8;"><i class="fa fa-phone-alt me-3 text-primary"></i>+237 694 16 46 68</p>
+                    <p class="mb-4 text-light" style="opacity: 0.8;"><i class="fa fa-envelope me-3 text-primary"></i>juslinkutche@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href="https://web.facebook.com/profile.php?id=61574640522614" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon-circle" href="https://www.facebook.com/share/1HWQBkejXY/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-icon-circle" href="https://www.instagram.com/jk_itsolution?igsh=aWxyZHh6OGpoamgz" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="social-icon-circle" href="https://www.tiktok.com/@jkitsolution_group?_r=1&_t=ZS-94ylG71kzn2" target="_blank">
+                            <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Services</h5>
-                    <a class="btn btn-link" href="service.html">Vidéosurveillance</a>
-                    <a class="btn btn-link" href="service.html">Test d’intrusion</a>
-                    <a class="btn btn-link" href="service.html">Sécurité des réseaux</a>
-                    <a class="btn btn-link" href="service.html">Consultation en IOT</a>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4">Nos Services</h5>
+                    <a class="footer-link-custom" href="service.html">Vidéosurveillance HD</a>
+                    <a class="footer-link-custom" href="service.html">Contrôle d'Accès Biométrique</a>
+                    <a class="footer-link-custom" href="service.html">Audit & Sécurité Réseau</a>
+                    <a class="footer-link-custom" href="service.html">Solutions Connectées IoT</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Liens rapides</h5>
-                    <a class="btn btn-link" href="about.html">À propos </a>
-                    <a class="btn btn-link" href="contact.html">Contact </a>
-                    <a class="btn btn-link" href="service.html">Services</a>
-                    <a class="btn btn-link" href="quote.html">Devis</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Écrivez-nous</h5>
-                    <p>Pour un développement technologique et un avenir numérique sécurisé.</p>
-                    <div class="position-relative w-100">
-                        <input required class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre Email">
-                        <a href="contact.html"><button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button></a>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4">Liens Rapides</h5>
+                    <a class="footer-link-custom" href="about.html">Découvrir notre histoire</a>
+                    <a class="footer-link-custom" href="contact.html">Nous contacter</a>
+                    <a class="footer-link-custom" href="project.html">Nos réalisations récentes</a>
+                    <a class="footer-link-custom" href="quote.html">Demander un devis rapide</a>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="container-fluid py-4" style="background: #000000;">
+    <div class="container-fluid py-4" style="background: #080808; border-top: 1px solid #1a1a1a;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy;<span id="year"></span> <a class="border-bottom text-primary" href="#">JK IT Solution</a>, Tous droits réservés.
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-secondary" style="opacity: 0.7;">
+                    &copy;<span id="year"></span> <a class="text-primary text-decoration-none fw-bold" href="#">JK IT Solution</a>, Tous droits réservés.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    Produit par <a class="border-bottom text-primary" href="#">JK IT Dev</a>
+                <div class="col-md-6 text-center text-md-end text-secondary" style="opacity: 0.7;">
+                    Produit par <span class="text-primary fw-bold">JK IT Dev</span>
                 </div>
             </div>
         </div>
     </div>
-
     <a href="https://wa.me/237694164668" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -648,6 +621,27 @@
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 
+    <script>
+        function envoyerDevisWhatsApp(event) {
+            event.preventDefault(); 
+            let nom = document.getElementById('d-nom').value;
+            let quartier = document.getElementById('d-quartier').value;
+            let typeCam = document.getElementById('d-type').value;
+            let pieces = document.getElementById('d-pieces').value;
+            let supp = document.getElementById('d-supp').value;
+
+            let texteMessage = "Bonjour JK IT Solution, je souhaite obtenir un devis d'installation.%0A%0A"
+                             + "*Nom & Prénoms :* " + nom + "%0A"
+                             + "*Localisation :* " + quartier + " (Yaoundé)%0A"
+                             + "*Type de caméras souhaité :* " + typeCam + "%0A"
+                             + "*Nombre de pièces à équiper :* " + pieces + "%0A"
+                             + "*Caméras supplémentaires (portail, extérieur) :* " + supp + "%0A%0A"
+                             + "Merci de me revenir avec une estimation.";
+
+            let lienWhatsApp = "https://wa.me/237694164668?text=" + texteMessage;
+            window.open(lienWhatsApp, '_blank');
+        }
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>
