@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Contactez-Nous | JK IT Solution - Sécurité & Informatique</title>
+    <title>Contactez-Nous | JK IT Solution - Vidéosurveillance & Sécurité</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="contact, vidéosurveillance, cybersécurité, réseau, Yaoundé, Cameroun" name="keywords">
-    <meta content="Contactez JK IT Solution à Yaoundé pour vos projets de sécurité, vidéosurveillance et réseaux informatiques." name="description">
+    <meta content="contact, JK IT Solution, vidéosurveillance, sécurité informatique, Yaoundé, TotalEnergies Nkomo" name="keywords">
+    <meta content="Contactez JK IT Solution à Yaoundé pour vos projets de sécurité. Déploiement au Cameroun." name="description">
 
     <link href="img/icon/icon-1.png" rel="icon">
 
@@ -27,7 +27,7 @@
     <style>
         :root {
             --primary: #00cc66 !important; 
-            --dark: #111111 !important; 
+            --dark: #161616 !important; 
         }
 
         .text-primary { color: var(--primary) !important; }
@@ -35,24 +35,24 @@
         .btn-primary { background-color: var(--primary) !important; border-color: var(--primary) !important; color: #000 !important; font-weight: bold;}
         .btn-primary:hover { background-color: #00994c !important; border-color: #00994c !important; color: #fff !important;}
 
-        /* MENU PREMIUM */
-        .navbar { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+        /* MENU PREMIUM EN PILULES */
+        .navbar { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); background-color: #ffffff !important; }
         .navbar-nav .nav-link {
             position: relative; padding: 8px 22px !important; margin: 15px 5px !important; 
             border-radius: 30px; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-weight: 600; color: #aaaaaa; border: 1px solid transparent;
+            font-weight: 600; color: #555555; border: 1px solid transparent;
         }
         .navbar-nav .nav-link:hover {
             background-color: #1a1a1a; color: var(--primary) !important;
             border: 1px solid var(--primary); transform: translateY(-2px); 
         }
         .navbar-nav .nav-link.active {
-            background-color: var(--dark); color: var(--primary) !important;
+            background-color: #111111; color: var(--primary) !important;
             border: 1px solid var(--primary); box-shadow: 0 4px 15px rgba(0, 204, 102, 0.3);
         }
 
         /* EN-TÊTE GÉANT (88vh) */
-        .contact-page-header {
+        .page-header {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../img/carousel-1.jpg) center center no-repeat;
             background-size: cover;
             height: 88vh; 
@@ -60,100 +60,78 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-bottom: 5rem;
         }
-        .contact-page-header h1 {
+        .page-header h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
         }
 
-        /* CARTES D'INFORMATION CONTACT */
-        .contact-card-premium {
-            background: #161616;
-            border-radius: 15px;
-            padding: 40px 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #333333;
-            transition: all 0.4s ease;
-            color: #bbbbbb;
-            height: 100%;
+        /* CARTES NOIRES PREMIUM POUR LE CONTACT */
+        .premium-dark-card {
+            background: var(--dark); border-radius: 12px; padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: 0.4s;
+            border: 1px solid #333; height: 100%; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
         }
-        .contact-card-premium:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.15);
+        .premium-dark-card:hover {
+            transform: translateY(-10px); border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.2);
+        }
+
+        /* STYLE DES LIGNES DE CONTACT */
+        .contact-row {
+            display: flex; align-items: center; margin-bottom: 25px;
         }
         .contact-icon-box {
-            width: 80px;
-            height: 80px;
-            background: #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #333;
-            transition: 0.4s;
+            width: 50px; height: 50px; background: #000; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            border: 1px solid #333; transition: 0.4s; margin-right: 20px;
         }
-        .contact-card-premium:hover .contact-icon-box {
-            background: var(--primary);
-            border-color: var(--primary);
+        .premium-dark-card:hover .contact-icon-box {
+            background: var(--primary); border-color: var(--primary);
         }
-        .contact-card-premium:hover .contact-icon-box i {
-            color: #000 !important; /* L'icône devient noire au survol vert */
+        .premium-dark-card:hover .contact-icon-box i {
+            color: #000 !important; /* L'icône devient noire au survol */
         }
-        .contact-card-premium h4 {
-            color: #fff;
-            font-weight: 700;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .contact-text {
+            color: #bbbbbb; margin-bottom: 0; font-size: 1.05rem; line-height: 1.5;
         }
 
-        /* BOUTONS RÉSEAUX SOCIAUX DYNAMIQUES */
-        .social-card-premium {
-            background: #111111;
-            border-radius: 15px;
-            padding: 30px 15px;
-            border: 1px solid #333333;
-            transition: all 0.4s ease;
-            text-decoration: none !important;
-            display: block;
+        /* BLOC CARTE À DROITE (Avec fond stylé vert/noir) */
+        .map-visual {
+            flex-grow: 1; background: linear-gradient(135deg, #111111 0%, #00331a 100%);
+            border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border: 1px solid #333; padding: 30px; text-align: center;
         }
-        .social-card-premium:hover {
-            background: var(--primary);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 204, 102, 0.3);
-            border-color: var(--primary);
-        }
-        .social-card-premium i {
-            color: var(--primary);
-            transition: 0.4s;
-        }
-        .social-card-premium h5 {
-            color: #fff;
-            margin-top: 15px;
-            font-weight: 600;
-            transition: 0.4s;
-        }
-        .social-card-premium:hover i, .social-card-premium:hover h5 {
-            color: #000 !important; /* Le texte et l'icône deviennent noirs */
+        .map-visual i {
+            font-size: 5rem; color: var(--primary); margin-bottom: 20px; opacity: 0.9;
         }
 
-        /* BOUTON WHATSAPP FLOTTANT */
+        /* BOUTON WHATSAPP À GAUCHE */
         .whatsapp-float {
-            position: fixed; width: 60px; height: 60px;
-            bottom: 110px; right: 45px; 
-            background-color: #25d366; color: #FFF;
-            border-radius: 50px; text-align: center; font-size: 35px;
-            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2); z-index: 1000;
-            display: flex; align-items: center; justify-content: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none;
+            position: fixed !important; width: 60px !important; height: 60px !important; 
+            bottom: 45px !important; left: 45px !important; right: auto !important; 
+            background-color: #25d366 !important; color: #FFF !important; border-radius: 50px !important; 
+            text-align: center !important; font-size: 35px !important; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3) !important; 
+            z-index: 9999 !important; display: flex !important; align-items: center !important; justify-content: center !important;
+            transition: 0.3s !important; text-decoration: none !important;
         }
-        .whatsapp-float:hover {
-            color: #FFF; transform: scale(1.1);
-            box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.5);
+        .whatsapp-float:hover { transform: scale(1.1) !important; box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.6) !important; color: #fff !important;}
+        @media (max-width: 768px) { .whatsapp-float { width: 50px !important; height: 50px !important; bottom: 20px !important; left: 20px !important; font-size: 28px !important; } }
+
+        /* FOOTER ÉPURÉ ET RÉSEAUX SOCIAUX */
+        .footer-premium { background: #111111 !important; border-top: 3px solid var(--primary); }
+        .footer-premium h5 { color: #ffffff; font-weight: 700; letter-spacing: 1px; margin-bottom: 25px; font-family: 'Montserrat', sans-serif; }
+        .footer-link-custom { color: #aaaaaa; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+        .footer-link-custom::before { content: "\f105"; font-family: "Font Awesome 5 Free"; font-weight: 900; margin-right: 10px; color: var(--primary); transition: 0.3s; }
+        .footer-link-custom:hover { color: var(--primary); transform: translateX(8px); }
+        .social-icon-circle {
+            width: 45px; height: 45px; display: inline-flex; align-items: center; justify-content: center;
+            background: #000; border-radius: 50%; color: #fff; margin-right: 15px; font-size: 1.2rem;
+            transition: 0.4s; border: 1px solid #333; text-decoration: none;
         }
-        @media (max-width: 768px) {
-            .whatsapp-float { width: 50px; height: 50px; bottom: 80px; right: 20px; font-size: 28px; }
-        }
+        .social-icon-circle:hover { background: var(--primary); color: #000; border-color: var(--primary); transform: translateY(-5px); }
     </style>
 </head>
 
@@ -168,30 +146,22 @@
         <div class="row gx-4 d-none d-lg-flex">
             <div class="col-lg-6 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="fa fa-map-marker-alt text-dark"></small>
-                    </div>
-                    <small>237 jk, Yaoundé, CM</small>
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small class="text-white">237 jk, Yaoundé, CM</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="fa fa-envelope-open text-dark"></small>
-                    </div>
-                    <small>juslinkutche@gmail.com</small>
+                    <small class="fa fa-envelope-open text-primary me-2"></small>
+                    <small class="text-white">juslinkutche@gmail.com</small>
                 </div>
             </div>
             <div class="col-lg-6 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="fa fa-phone-alt text-dark"></small>
-                    </div>
-                    <small>+237 6 94 16 46 68</small>
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small class="text-white">+237 6 94 16 46 68</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
-                    <div class="btn-sm-square rounded-circle bg-primary me-2">
-                        <small class="far fa-clock text-dark"></small>
-                    </div>
-                    <small>Lun - Ven : 9h - 21h</small>
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small class="text-white">Lun - Ven : 9h - 21h</small>
                 </div>
             </div>
         </div>
@@ -207,165 +177,123 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-4 py-lg-0">
                 <a href="index.html" class="nav-item nav-link">Accueil</a>
-                <a href="about.html" class="nav-item nav-link">A propos</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="project.html" class="nav-item nav-link">Projet</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="feature.html" class="dropdown-item">Fonctionnalités</a>
-                        <a href="quote.html" class="dropdown-item">Devis Gratuits</a>
-                        <a href="team.html" class="dropdown-item">Notre Equipe</a>
-                        <a href="testimonial.html" class="dropdown-item">Temoignages</a>
-                    </div>
-                </div>
+                <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="about.html" class="nav-item nav-link">À propos</a>
                 <a href="contact.html" class="nav-item nav-link active">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="container-fluid page-header contact-page-header wow fadeIn" data-wow-delay="0.1s">
-        <div class="container text-center">
-            <h1 class="display-3 text-white animated slideInDown mb-4">Contactez-Nous</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a class="text-white" href="index.html">Accueil</a></li>
-                    <li class="breadcrumb-item text-primary active" aria-current="page">Contact</li>
-                </ol>
-            </nav>
+    <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Contactez-Nous</h1>
         </div>
     </div>
 
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5 mt-n5">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
-                <h1 class="display-5 mb-5">Comment pouvons-nous vous aider ?</h1>
-            </div>
-            <div class="row g-4 justify-content-center mb-5">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="contact-card-premium text-center">
-                        <div class="contact-icon-box mx-auto">
-                            <i class="fa fa-map-marker-alt fa-2x text-primary"></i>
+            <div class="row g-5 align-items-stretch">
+                
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <div class="premium-dark-card">
+                        <h3 class="text-white mb-5">Coordonnées</h3>
+                        
+                        <div class="contact-row">
+                            <div class="contact-icon-box"><i class="fa fa-map-marker-alt text-primary"></i></div>
+                            <p class="contact-text">Rue 4.258, Yaoundé, Cameroun<br>(Face TotalEnergies Nkomo)</p>
                         </div>
-                        <h4>Notre Localisation</h4>
-                        <p class="mb-0">237 jk, Yaoundé, CM</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="contact-card-premium text-center">
-                        <div class="contact-icon-box mx-auto">
-                            <i class="fa fa-phone-alt fa-2x text-primary"></i>
+                        
+                        <div class="contact-row">
+                            <div class="contact-icon-box"><i class="fa fa-phone-alt text-primary"></i></div>
+                            <p class="contact-text">+237 6 94 16 46 68</p>
                         </div>
-                        <h4>Téléphone</h4>
-                        <p class="mb-0">+237 6 94 16 46 68</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="contact-card-premium text-center">
-                        <div class="contact-icon-box mx-auto">
-                            <i class="fa fa-envelope fa-2x text-primary"></i>
-                        </div>
-                        <h4>Boîte Mail</h4>
-                        <p class="mb-0">juslinkutche@gmail.com</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="text-center mt-5 mb-4 wow fadeInUp" data-wow-delay="0.1s">
-                <h3 class="mb-4">Retrouvez-nous sur les réseaux</h3>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.1s">
-                    <a href="https://www.instagram.com/jk_itsolution?igsh=aWxyZHh6OGpoamgz" target="_blank" class="social-card-premium text-center">
-                        <i class="fab fa-instagram fa-3x"></i>
-                        <h5>Instagram</h5>
-                    </a>
+                        <div class="contact-row">
+                            <div class="contact-icon-box"><i class="fa fa-envelope-open text-primary"></i></div>
+                            <p class="contact-text">juslinkutche@gmail.com</p>
+                        </div>
+
+                        <div class="contact-row">
+                            <div class="contact-icon-box"><i class="far fa-clock text-primary"></i></div>
+                            <p class="contact-text">Lun - Ven : 9h00 - 21h00</p>
+                        </div>
+
+                        <hr class="border-secondary my-4" style="opacity: 0.3;">
+
+                        <div class="d-flex align-items-center mt-3">
+                            <a class="social-icon-circle" href="https://www.facebook.com/share/1HWQBkejXY/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            <a class="social-icon-circle" href="https://www.instagram.com/jk_itsolution?igsh=aWxyZHh6OGpoamgz" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="social-icon-circle" href="https://www.tiktok.com/@jkitsolution_group?_r=1&_t=ZS-94ylG71kzn2" target="_blank">
+                                <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.3s">
-                    <a href="https://www.facebook.com/share/1HWQBkejXY/?mibextid=wwXIfr" target="_blank" class="social-card-premium text-center">
-                        <i class="fab fa-facebook-f fa-3x"></i>
-                        <h5>Facebook</h5>
-                    </a>
+
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                    <div class="premium-dark-card p-0">
+                        <div class="map-visual">
+                            <i class="fa fa-map-marker-alt"></i>
+                            <h3 class="text-white mb-2">TotalEnergies NKOMO</h3>
+                            <p class="text-light mb-0" style="opacity: 0.8;">Notre point d'intervention à Yaoundé</p>
+                        </div>
+                        <div class="p-4 text-center bg-dark" style="border-top: 1px solid #333;">
+                            <a href="https://maps.apple.com/place?address=Rue%204.258,%20Yaounde,%20Cameroun&coordinate=3.848047,11.553510&name=TotalEnergies%20NKOMO&place-id=I18379951ED11FD9F&map=h" target="_blank" class="btn btn-primary rounded-pill py-3 px-5 w-100 fw-bold fs-5">
+                                <i class="fa fa-directions me-2"></i> Voir sur la carte
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.5s">
-                    <a href="https://www.tiktok.com/@jkitsolution_group?_r=1&_t=ZS-94ylG71kzn2" target="_blank" class="social-card-premium text-center">
-                        <i class="fab fa-tiktok fa-3x"></i>
-                        <h5>TikTok</h5>
-                    </a>
-                </div>
-                <div class="col-6 col-md-3 wow fadeInUp" data-wow-delay="0.7s">
-                    <a href="https://wa.me/237694164668" target="_blank" class="social-card-premium text-center">
-                        <i class="fab fa-whatsapp fa-3x"></i>
-                        <h5>WhatsApp</h5>
-                    </a>
-                </div>
+
             </div>
         </div>
     </div>
-
-    <div class="container-fluid pt-5 px-0 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container px-lg-0">
-            <div class="position-relative" style="height: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                <iframe class="position-absolute w-100 h-100" style="object-fit: cover; border:0;"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127357.55877833095!2d11.43851509932064!3d3.860980486026413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf7a309a7977%3A0x7f54bad35e693c51!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
-                    allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-            </div>
-        </div>
-    </div>
-    <br><br>
-    <div class="container-fluid bg-dark text-secondary footer py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Adresse</h5>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>237 jk, Yaoundé, CM</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+237 694 16 46 68</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>juslinkutche@gmail.com</p>
+    <div class="container-fluid footer-premium py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-4">
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4">Contact & Adresse</h5>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3 text-primary"></i>237 jk, Yaoundé, CM</p>
+                    <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3 text-primary"></i>+237 694 16 46 68</p>
+                    <p class="mb-4 text-white"><i class="fa fa-envelope me-3 text-primary"></i>juslinkutche@gmail.com</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href="https://web.facebook.com/profile.php?id=61574640522614"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-secondary rounded-circle me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon-circle" href="https://www.facebook.com/share/1HWQBkejXY/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-icon-circle" href="https://www.instagram.com/jk_itsolution?igsh=aWxyZHh6OGpoamgz" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="social-icon-circle" href="https://www.tiktok.com/@jkitsolution_group?_r=1&_t=ZS-94ylG71kzn2" target="_blank">
+                            <svg style="width: 14px; height: 14px; fill: currentColor;" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Services</h5>
-                    <a class="btn btn-link" href="service.html">Vidéo surveillance</a>
-                    <a class="btn btn-link" href="service.html">Test d’intrusion</a>
-                    <a class="btn btn-link" href="service.html">Sécurité des réseaux</a>
-                    <a class="btn btn-link" href="service.html">Consultation en IOT</a>
-                    <a class="btn btn-link" href="service.html">Formations et ateliers</a>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4">Nos Services</h5>
+                    <a class="footer-link-custom" href="service.html">Vidéosurveillance HD</a>
+                    <a class="footer-link-custom" href="service.html">Contrôle d'Accès Biométrique</a>
+                    <a class="footer-link-custom" href="service.html">Audit & Sécurité Réseau</a>
+                    <a class="footer-link-custom" href="service.html">Solutions Connectées IoT</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Liens rapides</h5>
-                    <a class="btn btn-link" href="about.html">A propos </a>
-                    <a class="btn btn-link" href="contact.html">Contact </a>
-                    <a class="btn btn-link" href="service.html"> Services</a>
-                    <a class="btn btn-link" href="#">Partenaires</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="text-light mb-4">Ecrivez nous</h5>
-                    <p>Pour un developpement technologique et avenir numérique.</p>
-                    <div class="position-relative w-100">
-                        <input required class="form-control bg-transparent border-secondary w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre Email">
-                        <a href="contact.html"><button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button></a>
-                    </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="mb-4">Liens Rapides</h5>
+                    <a class="footer-link-custom" href="about.html">Découvrir notre histoire</a>
+                    <a class="footer-link-custom" href="contact.html">Nous contacter</a>
+                    <a class="footer-link-custom" href="service.html">Nos domaines d'intervention</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid py-4" style="background: #000000;">
+    
+    <div class="container-fluid py-4" style="background: #080808; border-top: 1px solid #1a1a1a;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    ©<span id="year"></span> <a class="border-bottom text-primary" href="#">JK IT Solution</a>, Tous droits réservés.
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0 text-secondary" style="opacity: 0.7;">
+                    &copy;<span id="year"></span> <a class="text-primary text-decoration-none fw-bold" href="#">JK IT Solution</a>, Tous droits réservés.
                 </div>
-                <div class="col-md-6 text-center text-md-end">
-                    Produit par <a class="border-bottom text-primary" href="#">JK IT Dev</a>
+                <div class="col-md-6 text-center text-md-end text-secondary" style="opacity: 0.7;">
+                    Produit par <span class="text-primary fw-bold">JK IT Dev</span>
                 </div>
             </div>
         </div>
     </div>
+
     <a href="https://wa.me/237694164668" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -377,11 +305,9 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
+    
     <script src="js/main.js"></script>
 </body>
 </html>
