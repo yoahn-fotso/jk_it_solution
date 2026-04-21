@@ -27,7 +27,7 @@
     <style>
         :root {
             --primary: #00cc66 !important; /* Vert Tech */
-            --dark: #111111 !important; /* Noir profond */
+            --dark: #161616 !important; /* Noir profond pour les cartes */
         }
 
         .text-primary { color: var(--primary) !important; }
@@ -35,9 +35,7 @@
         .btn-primary { background-color: var(--primary) !important; border-color: var(--primary) !important; color: #000 !important; font-weight: bold;}
         .btn-primary:hover { background-color: #00994c !important; border-color: #00994c !important; color: #fff !important;}
 
-        /* =========================================
-           1. MENU PREMIUM (FOND BLANC, BOUTONS RONDS)
-           ========================================= */
+        /* MENU PREMIUM EN PILULES */
         .navbar { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); background-color: #ffffff !important; }
         .navbar-nav .nav-link {
             position: relative; padding: 8px 22px !important; margin: 15px 5px !important; 
@@ -49,101 +47,84 @@
             border: 1px solid var(--primary); transform: translateY(-2px); 
         }
         .navbar-nav .nav-link.active {
-            background-color: var(--dark); color: var(--primary) !important;
+            background-color: #111111; color: var(--primary) !important;
             border: 1px solid var(--primary); box-shadow: 0 4px 15px rgba(0, 204, 102, 0.3);
         }
-        .navbar .nav-item.dropdown:hover .nav-link.dropdown-toggle {
-            background-color: #1a1a1a; color: var(--primary) !important; border: 1px solid var(--primary);
-        }
 
-        /* =========================================
-           2. BLOCS NOIR & VERT (Cartes stylées)
-           ========================================= */
-        .fact-card {
-            background: #161616; border-radius: 15px; padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: all 0.4s ease;
-            border: 1px solid #333333; text-align: left; position: relative; overflow: hidden; height: 100%;
+        /* CARTES NOIRES PREMIUM (Intro, Services, Projets, Équipe) */
+        .premium-dark-card {
+            background: var(--dark); border-radius: 12px; padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); transition: 0.4s;
+            border: 1px solid #333; height: 100%; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
         }
-        .fact-card:hover {
-            transform: translateY(-12px); box-shadow: 0 15px 40px rgba(0, 204, 102, 0.15); border-color: var(--primary);
+        .premium-dark-card:hover {
+            transform: translateY(-10px); border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(0, 204, 102, 0.2);
         }
-        .fact-icon-box {
-            width: 70px; height: 70px; background: #000000; border-radius: 12px;
-            display: flex; align-items: center; justify-content: center; margin-bottom: 25px;
-            transition: 0.4s; border: 1px solid #333;
+        .premium-icon-box {
+            width: 65px; height: 65px; background: #000; border-radius: 15px;
+            display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: 0.4s; border: 1px solid #333;
         }
-        .fact-card:hover .fact-icon-box { background: var(--primary); border-color: var(--primary); }
-        .fact-card:hover .fact-icon-box img { filter: brightness(0); }
-        .fact-number {
-            position: absolute; right: 20px; top: 20px; font-size: 3rem; font-weight: 900;
-            color: #222222; z-index: 0; transition: 0.4s;
-        }
-        .fact-card:hover .fact-number { color: rgba(0, 204, 102, 0.2); }
-        .fact-card h5 { color: #ffffff; font-weight: 700; position: relative; z-index: 1;}
-        .fact-card span, .fact-card p { color: #bbbbbb; position: relative; z-index: 1;}
-
-        /* BOUTONS DANS LES CARTES SERVICES */
-        .service-card-premium {
-            background: #161616; border-radius: 15px; padding: 40px; 
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); transition: all 0.4s ease; border: 1px solid #333333; height: 100%;
-        }
-        .service-card-premium:hover { transform: translateY(-12px); border-color: var(--primary); }
-        .service-card-premium h4 { color: #ffffff; font-weight: 700; }
-        .btn-contact {
-            background: transparent; border: 2px solid var(--primary); color: var(--primary); border-radius: 30px;
-            padding: 8px 20px; transition: 0.3s; font-weight: 600; display: inline-block; text-decoration: none; margin-top: 15px;
-        }
-        .service-card-premium:hover .btn-contact { background: var(--primary); color: #000; }
-
-        /* CARTES ÉQUIPE ET PROJETS (Mode Noir) */
-        .team-premium-card {
-            background: #161616; border-radius: 15px; overflow: hidden; border: 1px solid #333; transition: 0.4s;
-        }
-        .team-premium-card:hover { border-color: var(--primary); transform: translateY(-10px); }
-        .team-premium-card .text-center { background: #111; border-top: 1px solid #333; }
-        .portfolio-text.bg-white { background-color: #111 !important; border: 1px solid #333; border-top: none; }
-        .portfolio-text h5 { color: #fff; }
-
-        /* =========================================
-           3. FOOTER ULTRA ATTRAYANT
-           ========================================= */
-        .footer-premium {
-            background: linear-gradient(to right, #0a0a0a, #1a1a1a) !important;
-            border-top: 3px solid var(--primary);
-        }
-        .footer-premium h5 {
-            color: #ffffff; font-weight: 700; letter-spacing: 1px; margin-bottom: 25px; text-transform: uppercase; font-family: 'Montserrat', sans-serif;
-        }
-        /* Style des liens rapides avec flèche animée */
-        .footer-link-custom {
-            color: #aaaaaa; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s;
-        }
-        .footer-link-custom::before {
-            content: "\f105"; font-family: "Font Awesome 5 Free"; font-weight: 900; margin-right: 10px; color: var(--primary); transition: 0.3s;
-        }
-        .footer-link-custom:hover { color: var(--primary); transform: translateX(8px); }
+        .premium-dark-card:hover .premium-icon-box { background: var(--primary); border-color: var(--primary); }
+        .premium-dark-card:hover .premium-icon-box img { filter: brightness(0); }
         
-        /* Icônes réseaux sociaux Footer */
-        .social-icon-circle {
-            width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
-            background: rgba(255,255,255,0.05); border-radius: 50%; color: #fff; margin-right: 10px;
-            transition: 0.4s; border: 1px solid rgba(255,255,255,0.1); text-decoration: none;
-        }
-        .social-icon-circle:hover { background: var(--primary); color: #000; border-color: var(--primary); transform: translateY(-5px); }
+        .premium-dark-card h4, .premium-dark-card h5 { color: #ffffff; font-weight: 700; position: relative; z-index: 1;}
+        .premium-dark-card p { color: #bbbbbb; position: relative; z-index: 1; flex-grow: 1;}
 
-        /* =========================================
-           4. BOUTON WHATSAPP FLOTTANT (Désormais sage à droite)
-           ========================================= */
+        /* Numéros d'intro */
+        .card-number {
+            position: absolute; right: 20px; top: 10px; font-size: 3rem; font-weight: 900;
+            color: #222; transition: 0.4s; z-index: 0;
+        }
+        .premium-dark-card:hover .card-number { color: rgba(0, 204, 102, 0.1); }
+
+        /* Bouton dans les cartes services */
+        .btn-card-custom {
+            background: transparent; border: 2px solid var(--primary); color: var(--primary); border-radius: 30px;
+            padding: 8px 20px; transition: 0.3s; font-weight: 600; display: inline-block; text-decoration: none; margin-top: 15px; text-align: center;
+        }
+        .premium-dark-card:hover .btn-card-custom { background: var(--primary); color: #000; }
+
+        /* PROJETS (Tailles strictement égales) */
+        .project-card {
+            background: var(--dark); border-radius: 12px; overflow: hidden; border: 1px solid #333; transition: 0.4s;
+            display: flex; flex-direction: column; height: 100%;
+        }
+        .project-card:hover { border-color: var(--primary); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0, 204, 102, 0.2); }
+        .project-img-wrapper { height: 250px; overflow: hidden; }
+        .project-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* FORMULAIRE DEVIS */
+        .form-control, .form-select {
+            background-color: #fff !important; color: #333 !important; border: 1px solid #ddd !important;
+        }
+        .form-control:focus, .form-select:focus { border-color: var(--primary) !important; box-shadow: 0 0 5px rgba(0,204,102,0.3) !important; }
+
+        /* BOUTON WHATSAPP À GAUCHE */
         .whatsapp-float {
             position: fixed !important; width: 60px !important; height: 60px !important; 
-            bottom: 90px !important; right: 30px !important; left: auto !important; 
+            bottom: 45px !important; left: 45px !important; right: auto !important; 
             background-color: #25d366 !important; color: #FFF !important; border-radius: 50px !important; 
             text-align: center !important; font-size: 35px !important; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3) !important; 
             z-index: 9999 !important; display: flex !important; align-items: center !important; justify-content: center !important;
             transition: 0.3s !important; text-decoration: none !important;
         }
         .whatsapp-float:hover { transform: scale(1.1) !important; box-shadow: 2px 2px 20px rgba(37, 211, 102, 0.6) !important; color: #fff !important;}
-        @media (max-width: 768px) { .whatsapp-float { width: 50px !important; height: 50px !important; bottom: 80px !important; right: 20px !important; font-size: 28px !important; } }
+        @media (max-width: 768px) { .whatsapp-float { width: 50px !important; height: 50px !important; bottom: 20px !important; left: 20px !important; font-size: 28px !important; } }
+
+        /* FOOTER ÉPURÉ */
+        .footer-premium { background: #111111 !important; border-top: 3px solid var(--primary); }
+        .footer-premium h5 { color: #ffffff; font-weight: 700; letter-spacing: 1px; margin-bottom: 25px; font-family: 'Montserrat', sans-serif; }
+        .footer-link-custom { color: #aaaaaa; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+        .footer-link-custom::before { content: "\f105"; font-family: "Font Awesome 5 Free"; font-weight: 900; margin-right: 10px; color: var(--primary); transition: 0.3s; }
+        .footer-link-custom:hover { color: var(--primary); transform: translateX(8px); }
+        .social-icon-circle {
+            width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.05); border-radius: 50%; color: #fff; margin-right: 10px;
+            transition: 0.4s; border: 1px solid rgba(255,255,255,0.1); text-decoration: none;
+        }
+        .social-icon-circle:hover { background: var(--primary); color: #000; border-color: var(--primary); transform: translateY(-5px); }
     </style>
 </head>
 
@@ -178,6 +159,7 @@
             </div>
         </div>
     </div>
+
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
             <h2 class="m-0 text-primary">JK IT Solution</h2>
@@ -188,20 +170,17 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-4 py-lg-0">
                 <a href="index.html" class="nav-item nav-link active">Accueil</a>
-                <a href="about.html" class="nav-item nav-link">À propos</a>
                 <a href="service.html" class="nav-item nav-link">Services</a>
-                <a href="project.html" class="nav-item nav-link">Projets</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-                        <a href="quote.html" class="dropdown-item">Devis Gratuit</a>
-                        <a href="team.html" class="dropdown-item">Notre Équipe</a>
-                    </div>
-                </div>
+                <a href="about.html" class="nav-item nav-link">À propos</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <div class="h-100 d-lg-inline-flex align-items-center d-none">
+                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="https://www.facebook.com/share/1HWQBkejXY/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="https://www.instagram.com/jk_itsolution?igsh=aWxyZHh6OGpoamgz" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </nav>
+
     <div class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
@@ -210,10 +189,10 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Meilleure Solution De Vidéosurveillance & Sécurité Pour Vous. </h1>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Meilleure Solution De Vidéosurveillance & Sécurité Pour Vous</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Protégez vos locaux commerciaux et résidentiels avec nos systèmes de caméras haute définition et un accès à distance sécurisé 24h/24.</p>
-                                <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Voir plus</a>
-                                <a href="quote.html" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
+                                <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Voir nos services</a>
+                                <a href="#devis-section" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
                             </div>
                         </div>
                     </div>
@@ -225,10 +204,10 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-12 col-lg-8 text-center">
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Infrastructures Réseaux & Contrôle d'Accès Sécurisé.</h1>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">Infrastructures Réseaux & Contrôle d'Accès Sécurisé</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Maîtrisez vos flux et sécurisez vos données grâce à nos solutions technologiques robustes et intelligentes adaptées à votre entreprise.</p>
                                 <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Découvrir PLUS</a>
-                                <a href="quote.html" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
+                                <a href="#devis-section" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
                             </div>
                         </div>
                     </div>
@@ -243,7 +222,7 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Solution Innovante Pour La Sécurité Système</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Découvrez nos solutions d'audit réseau et d'objets connectés (IoT) pour optimiser la gestion de votre infrastructure technologique.</p>
                                 <a href="service.html" class="btn btn-primary rounded-pill py-md-3 px-md-5 me-3 animated slideInLeft">Lire Plus</a>
-                                <a href="quote.html" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
+                                <a href="#devis-section" class="btn btn-light rounded-pill py-md-3 px-md-5 animated slideInRight">Devis Gratuit</a>
                             </div>
                         </div>
                     </div>
@@ -251,37 +230,32 @@
             </div>
         </div>
     </div>
+
     <div class="container-xxl py-5 mt-n5">
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="fact-card">
-                        <div class="fact-number">01</div>
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-3.png" alt="Caméra" width="35"></div>
-                        </div>
+                    <div class="premium-dark-card">
+                        <div class="card-number">01</div>
+                        <div class="premium-icon-box"><img src="img/icon/icon-3.png" alt="Caméra" width="35"></div>
                         <h5>SÉCURITÉ À DOMICILE</h5>
                         <hr class="w-25 text-primary my-3">
                         <p class="mb-0">Protégez votre cocon familial. Nos systèmes de caméras HD et alarmes intelligentes vous offrent une sérénité absolue, de jour comme de nuit, où que vous soyez.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="fact-card">
-                        <div class="fact-number">02</div>
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-4.png" alt="Accès" width="35"></div>
-                        </div>
+                    <div class="premium-dark-card">
+                        <div class="card-number">02</div>
+                        <div class="premium-icon-box"><img src="img/icon/icon-4.png" alt="Accès" width="35"></div>
                         <h5>CONTRÔLE D'ACCÈS</h5>
                         <hr class="w-25 text-primary my-3">
                         <p class="mb-0">Filtrez et maîtrisez vos entrées. Nous déployons des solutions biométriques et à badges de pointe pour protéger efficacement vos espaces professionnels sensibles.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="fact-card">
-                        <div class="fact-number">03</div>
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-2.png" alt="Support" width="35"></div>
-                        </div>
+                    <div class="premium-dark-card">
+                        <div class="card-number">03</div>
+                        <div class="premium-icon-box"><img src="img/icon/icon-2.png" alt="Support" width="35"></div>
                         <h5>SUPPORT 24/7</h5>
                         <hr class="w-25 text-primary my-3">
                         <p class="mb-0">Une sécurité sans faille exige une présence continue. Notre équipe technique est réactive et disponible 7j/7 pour l'assistance et la maintenance de vos installations.</p>
@@ -290,6 +264,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -314,56 +289,50 @@
             </div>
         </div>
     </div>
+
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center">
                 <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
                 <h1 class="display-5 mb-5">Nos Services Spécialisés</h1>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 align-items-stretch">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="service-card-premium">
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-6.png" alt="CCTV" width="35"></div>
-                        </div>
-                        <h4 class="fs-5">Vidéosurveillance</h4>
-                        <p class="small mt-3">Solutions HD/4K avec enregistrement continu et monitoring sécurisé sur mobile.</p>
-                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="premium-dark-card">
+                        <div class="premium-icon-box"><img src="img/icon/icon-6.png" alt="CCTV" width="35"></div>
+                        <h4 class="fs-5 mb-3">Vidéosurveillance Commerciale</h4>
+                        <p class="small">Solutions HD/4K avec enregistrement continu et monitoring sécurisé sur mobile.</p>
+                        <a class="btn-card-custom mt-auto" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="service-card-premium">
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-8.png" alt="Bio" width="35"></div>
-                        </div>
-                        <h4 class="fs-5">Accès & Biométrie</h4>
-                        <p class="small mt-3">Gérez vos accès locaux par empreinte digitale, reconnaissance faciale ou RFID.</p>
-                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="premium-dark-card">
+                        <div class="premium-icon-box"><img src="img/icon/icon-8.png" alt="Bio" width="35"></div>
+                        <h4 class="fs-5 mb-3">Accès Par Empreinte</h4>
+                        <p class="small">Gérez vos accès locaux par empreinte digitale, reconnaissance faciale ou RFID.</p>
+                        <a class="btn-card-custom mt-auto" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="service-card-premium">
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-9.png" alt="IoT" width="35"></div>
-                        </div>
-                        <h4 class="fs-5">Domotique & IoT</h4>
-                        <p class="small mt-3">Automatisation de vos environnements pour toujours plus de confort et de sécurité.</p>
-                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="premium-dark-card">
+                        <div class="premium-icon-box"><img src="img/icon/icon-9.png" alt="IoT" width="35"></div>
+                        <h4 class="fs-5 mb-3">Consultation En IoT</h4>
+                        <p class="small">Automatisation de vos environnements pour toujours plus de confort et de sécurité.</p>
+                        <a class="btn-card-custom mt-auto" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="service-card-premium">
-                        <div class="fact-icon-box">
-                            <div class="fact-icon"><img src="img/icon/icon-3.png" alt="Sec" width="35"></div>
-                        </div>
-                        <h4 class="fs-5">Sécurité Réseau IT</h4>
-                        <p class="small mt-3">Pares-feux, tests d'intrusion et sécurisation globale de vos données d'entreprise.</p>
-                        <a class="btn-contact" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
+                    <div class="premium-dark-card">
+                        <div class="premium-icon-box"><img src="img/icon/icon-3.png" alt="Sec" width="35"></div>
+                        <h4 class="fs-5 mb-3">Sécurité Réseau IT</h4>
+                        <p class="small">Pares-feux, tests d'intrusion et sécurisation globale de vos données d'entreprise.</p>
+                        <a class="btn-card-custom mt-auto" href="service.html">Détails <i class="fa fa-arrow-right ms-2"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container-fluid bg-dark overflow-hidden my-5 px-lg-0">
         <div class="container feature px-lg-0">
             <div class="row g-0 mx-lg-0">
@@ -422,84 +391,101 @@
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg"
-                            style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/feature.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="bg-primary mb-3 mx-auto" style="width: 60px; height: 2px;"></div>
                 <h1 class="display-5 mb-5">Nos Projets Récents</h1>
             </div>
+            
+            <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-12 text-center">
+                    <ul class="list-inline mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">Tous</li>
+                        <li class="mx-2" data-filter=".first">Projets Terminés</li>
+                        <li class="mx-2" data-filter=".second">Projets En Cours</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-card-premium p-0 d-flex flex-column h-100">
-                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
-                        <div class="p-4 text-center flex-grow-1">
-                            <p class="text-primary mb-1 fw-bold">Sécurité Entreprise</p>
-                            <h5 class="text-white fs-6">Centre de Télésurveillance & Moniteurs</h5>
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="img/portfolio-1.jpg" alt="">
                         </div>
-                        <div class="p-3 text-center border-top" style="border-color: #333 !important;">
-                            <a class="btn btn-square btn-primary rounded-circle" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <div class="text-center p-4 d-flex flex-column flex-grow-1 justify-content-center">
+                            <p class="text-primary mb-2 fw-bold">Sécurité Des Entreprises</p>
+                            <h5 class="lh-base mb-0 text-white">Système De Sécurité CCTV Adapté À Votre Entreprise</h5>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-card-premium p-0 d-flex flex-column h-100">
-                        <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
-                        <div class="p-4 text-center flex-grow-1">
-                            <p class="text-primary mb-1 fw-bold">Vidéo Surveillance</p>
-                            <h5 class="text-white fs-6">Installation de Caméras Extérieures HD</h5>
-                        </div>
-                        <div class="p-3 text-center border-top" style="border-color: #333 !important;">
-                            <a class="btn btn-square btn-primary rounded-circle" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <div class="p-3 text-center border-top" style="border-color: #333 !important; background: #111;">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-card-premium p-0 d-flex flex-column h-100">
-                        <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="" style="height: 250px; object-fit: cover; border-top-left-radius: 12px; border-top-right-radius: 12px;">
-                        <div class="p-4 text-center flex-grow-1">
-                            <p class="text-primary mb-1 fw-bold">Contrôle D'accès</p>
-                            <h5 class="text-white fs-6">Déploiement de Pointage Biométrique</h5>
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="img/portfolio-2.jpg" alt="">
                         </div>
-                        <div class="p-3 text-center border-top" style="border-color: #333 !important;">
-                            <a class="btn btn-square btn-primary rounded-circle" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        <div class="text-center p-4 d-flex flex-column flex-grow-1 justify-content-center">
+                            <p class="text-primary mb-2 fw-bold">Vidéo Surveillance</p>
+                            <h5 class="lh-base mb-0 text-white">Installation Complexe De Caméras Thermiques</h5>
+                        </div>
+                        <div class="p-3 text-center border-top" style="border-color: #333 !important; background: #111;">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="img/portfolio-3.jpg" alt="">
+                        </div>
+                        <div class="text-center p-4 d-flex flex-column flex-grow-1 justify-content-center">
+                            <p class="text-primary mb-2 fw-bold">Contrôle D'accès</p>
+                            <h5 class="lh-base mb-0 text-white">Déploiement de Pointage Biométrique Sécurisé</h5>
+                        </div>
+                        <div class="p-3 text-center border-top" style="border-color: #333 !important; background: #111;">
+                            <a class="btn btn-square btn-primary rounded-circle mx-1" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+
+    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0" id="devis-section">
         <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg"
-                            style="object-fit: cover;" alt="">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
-                        <h1 class="display-5 mb-5">Votre Devis Personnalisé</h1>
-                        <p class="mb-4 pb-2 text-secondary">La sécurité n'attend pas. Remplissez ces informations et recevez instantanément une estimation adaptée à votre besoin via WhatsApp. Simple, rapide et sans engagement.</p>
+                        <h1 class="display-5 mb-4">Votre Devis Personnalisé</h1>
+                        <p class="mb-4 pb-2 text-secondary">La sécurité n'attend pas. Remplissez ces informations et recevez instantanément une estimation via WhatsApp. Rapide, direct et sans engagement.</p>
                         
                         <form id="devis-form" onsubmit="envoyerDevisWhatsApp(event)">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control py-3" id="d-nom" placeholder="Nom & Prénoms" required>
+                                    <input type="text" class="form-control bg-white border-0 py-3" id="d-nom" placeholder="Nom & Prénoms" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control py-3" id="d-quartier" placeholder="Quartier (Yaoundé)" required>
+                                    <input type="text" class="form-control bg-white border-0 py-3" id="d-quartier" placeholder="Quartier (Yaoundé)" required>
                                 </div>
                                 <div class="col-12">
-                                    <select class="form-select py-3" id="d-type" required>
+                                    <select class="form-select bg-white border-0 py-3" id="d-type" required>
                                         <option value="" selected disabled>Style de caméras souhaité</option>
                                         <option value="Caméras IP (Haute résolution)">Caméras IP (Haute résolution réseau)</option>
                                         <option value="Caméras Analogiques HD">Caméras Analogiques HD (Classique)</option>
@@ -510,14 +496,17 @@
                                     </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="number" class="form-control py-3" id="d-pieces" placeholder="Nbre de pièces intérieures" min="0" required>
+                                    <input type="number" class="form-control bg-white border-0 py-3" id="d-pieces" placeholder="Nbre de pièces intérieures" min="0" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="number" class="form-control py-3" id="d-supp" placeholder="Caméras supp. (Portail...)" min="0" required>
+                                    <input type="number" class="form-control bg-white border-0 py-3" id="d-supp" placeholder="Caméras supp. (Portail, couloir...)" min="0" required>
                                 </div>
-                                <div class="col-12 mt-4">
-                                    <button class="btn btn-primary w-100 py-3 rounded-pill fs-5" type="submit">
-                                        <i class="fab fa-whatsapp me-2 fs-4"></i> Recevoir mon devis sur WhatsApp
+                                <div class="col-12">
+                                    <textarea class="form-control bg-white border-0 py-3" id="d-description" rows="3" placeholder="Décrivez votre besoin en détail..." required></textarea>
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <button class="btn btn-primary w-100 py-3 rounded-pill fw-bold" type="submit">
+                                        <i class="fab fa-whatsapp me-2 fs-5"></i> Obtenir Le Devis via WhatsApp
                                     </button>
                                 </div>
                             </div>
@@ -527,6 +516,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-xxl py-5 mb-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -559,14 +549,15 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid footer-premium py-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+
+    <div class="container-fluid footer-premium py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-4">
             <div class="row g-5 justify-content-center">
                 <div class="col-lg-4 col-md-6">
                     <h5 class="mb-4">Contact & Adresse</h5>
-                    <p class="mb-2 text-light" style="opacity: 0.8;"><i class="fa fa-map-marker-alt me-3 text-primary"></i>237 jk, Yaoundé, CM</p>
-                    <p class="mb-2 text-light" style="opacity: 0.8;"><i class="fa fa-phone-alt me-3 text-primary"></i>+237 694 16 46 68</p>
-                    <p class="mb-4 text-light" style="opacity: 0.8;"><i class="fa fa-envelope me-3 text-primary"></i>juslinkutche@gmail.com</p>
+                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt me-3 text-primary"></i>237 jk, Yaoundé, CM</p>
+                    <p class="mb-2 text-white"><i class="fa fa-phone-alt me-3 text-primary"></i>+237 694 16 46 68</p>
+                    <p class="mb-4 text-white"><i class="fa fa-envelope me-3 text-primary"></i>juslinkutche@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="social-icon-circle" href="https://www.facebook.com/share/1HWQBkejXY/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a class="social-icon-circle" href="https://www.instagram.com/jk_itsolution?igsh=aWxyZHh6OGpoamgz" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -586,8 +577,7 @@
                     <h5 class="mb-4">Liens Rapides</h5>
                     <a class="footer-link-custom" href="about.html">Découvrir notre histoire</a>
                     <a class="footer-link-custom" href="contact.html">Nous contacter</a>
-                    <a class="footer-link-custom" href="project.html">Nos réalisations récentes</a>
-                    <a class="footer-link-custom" href="quote.html">Demander un devis rapide</a>
+                    <a class="footer-link-custom" href="service.html">Nos domaines d'intervention</a>
                 </div>
             </div>
         </div>
@@ -605,6 +595,7 @@
             </div>
         </div>
     </div>
+
     <a href="https://wa.me/237694164668" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -616,32 +607,36 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script> 
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script> 
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <script src="js/main.js"></script>
 
     <script>
         function envoyerDevisWhatsApp(event) {
             event.preventDefault(); 
-            let nom = document.getElementById('d-nom').value;
-            let quartier = document.getElementById('d-quartier').value;
-            let typeCam = document.getElementById('d-type').value;
-            let pieces = document.getElementById('d-pieces').value;
-            let supp = document.getElementById('d-supp').value;
+            
+            let nom = document.getElementById('d-nom').value || 'Non renseigné';
+            let quartier = document.getElementById('d-quartier').value || 'Non renseigné';
+            let typeCam = document.getElementById('d-type').value || 'Non sélectionné';
+            let pieces = document.getElementById('d-pieces').value || '0';
+            let supp = document.getElementById('d-supp').value || '0';
+            let description = document.getElementById('d-description').value || 'Aucune description';
 
-            let texteMessage = "Bonjour JK IT Solution, je souhaite obtenir un devis d'installation.%0A%0A"
-                             + "*Nom & Prénoms :* " + nom + "%0A"
-                             + "*Localisation :* " + quartier + " (Yaoundé)%0A"
-                             + "*Type de caméras souhaité :* " + typeCam + "%0A"
-                             + "*Nombre de pièces à équiper :* " + pieces + "%0A"
-                             + "*Caméras supplémentaires (portail, extérieur) :* " + supp + "%0A%0A"
+            let texteMessage = "Bonjour JK IT Solution, je souhaite obtenir un devis d'installation.\n\n"
+                             + "*Nom & Prénoms :* " + nom + "\n"
+                             + "*Localisation :* " + quartier + " (Yaoundé)\n"
+                             + "*Type de caméras souhaité :* " + typeCam + "\n"
+                             + "*Nombre de pièces à équiper :* " + pieces + "\n"
+                             + "*Caméras supplémentaires (portail, extérieur) :* " + supp + "\n"
+                             + "*Description du besoin :* \n" + description + "\n\n"
                              + "Merci de me revenir avec une estimation.";
 
-            let lienWhatsApp = "https://wa.me/237694164668?text=" + texteMessage;
+            let lienWhatsApp = "https://wa.me/237694164668?text=" + encodeURIComponent(texteMessage);
             window.open(lienWhatsApp, '_blank');
         }
     </script>
-    <script src="js/main.js"></script>
 </body>
 </html>
